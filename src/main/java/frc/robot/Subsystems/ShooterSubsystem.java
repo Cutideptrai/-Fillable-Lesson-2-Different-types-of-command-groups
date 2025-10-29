@@ -10,19 +10,23 @@ import com.revrobotics.spark.SparkMax;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
-public class MotorSubsystem extends SubsystemBase {
+public class ShooterSubsystem extends SubsystemBase {
   /** Creates a new MotorSubsystem. */
 
-  private SparkMax motor1 = new SparkMax(Constants.MotorID, MotorType.kBrushless);
+  private SparkMax shooterMotor = new SparkMax(Constants.ShooterID, MotorType.kBrushless);
 
-  public MotorSubsystem() {}
+  public ShooterSubsystem() {}
 
-  public void runMotor(){
-    motor1.set(.5);
+  public void runMotorForwards(){
+    shooterMotor.set(0.5);
+  }
+
+  public void runMotorBackwards(){
+    shooterMotor.set(0.5);
   }
 
   public void stop(){
-    motor1.set(0);
+    shooterMotor.set(0);
   }
 
   @Override

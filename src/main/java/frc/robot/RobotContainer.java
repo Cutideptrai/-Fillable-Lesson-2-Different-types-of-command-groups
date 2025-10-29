@@ -38,11 +38,9 @@ public class RobotContainer {
    * PS4} controllers or {@link edu.wpi.first.wpilibj2.command.button.CommandJoystick Flight
    * joysticks}.
    */
-  private void configureBindings() {
-    // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
-    
-    driverController.a().whileTrue(new RunMotor());
-
+  private void configureBindings() 
+  {
+    // TO DO: CONFIGUE BINDINGS FOR COMMANDS
   }
 
   /**
