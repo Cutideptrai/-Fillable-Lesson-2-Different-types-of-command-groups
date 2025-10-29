@@ -1,6 +1,6 @@
 package frc.robot;
 
-import frc.robot.Subsystems.AlgaeRemoverSubsystem;
+import frc.robot.Subsystems.*;
 
 public final class Constants {
     
@@ -12,6 +12,6 @@ public final class Constants {
     public static final int kControllerPort = 0;
 
     //subsystems
-    public static final AlgaeRemoverSubsystem motorSubsystem = new AlgaeRemoverSubsystem();
-
+    public static final AlgaeRemoverSubsystem ALGAE_REMOVER_SUBSYSTEM = new AlgaeRemoverSubsystem();
+    public static final ShooterSubsystem SHOOTER_SUBSYSTEM = new ShooterSubsystem();
 }

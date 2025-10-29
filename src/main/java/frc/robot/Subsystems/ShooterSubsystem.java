@@ -8,6 +8,7 @@ import com.revrobotics.spark.SparkLowLevel.MotorType;
 import com.revrobotics.spark.SparkMax;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Constants;
 
 public class ShooterSubsystem extends SubsystemBase {
@@ -27,6 +28,21 @@ public class ShooterSubsystem extends SubsystemBase {
 
   public void stop(){
     shooterMotor.set(0);
+  }
+
+  public Command runMotorForwardsCommand ()
+  {
+    return run(this::runMotorForwards);
+  }
+
+  public Command runMotorBackwardsCommand ()
+  {
+    return run(this::runMotorBackwards);
+  }
+
+  public Command stopCommand ()
+  {
+    return run(this::stop);
   }
 
   @Override

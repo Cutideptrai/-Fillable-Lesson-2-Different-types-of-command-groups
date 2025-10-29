@@ -8,6 +8,7 @@ import com.revrobotics.spark.SparkLowLevel.MotorType;
 import com.revrobotics.spark.SparkMax;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Constants;
 
 public class AlgaeRemoverSubsystem extends SubsystemBase {
@@ -18,15 +19,30 @@ public class AlgaeRemoverSubsystem extends SubsystemBase {
   public AlgaeRemoverSubsystem() {}
 
   public void runMotorForwards(){
-    removerMotor.set(.5);
+    removerMotor.set(0.5);
   }
 
   public void runMotorBackwards(){
-    removerMotor.set(.5);
+    removerMotor.set(-0.5);
   }
 
   public void stop(){
     removerMotor.set(0);
+  }
+
+  public Command runRemoverForwardsCommand()
+  {
+    return run(this::runMotorForwards);
+  }
+
+  public Command runRemoverBackwardsCommand()
+  {
+    return run(this::runRemoverBackwardsCommand);
+  }
+
+  public Command stopRemoverCommand ()
+  {
+    return run(this::stop);
   }
 
   @Override

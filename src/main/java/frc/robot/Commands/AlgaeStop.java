@@ -1,5 +1,16 @@
 package frc.robot.Commands;
 
-public class AlgaeStop {
-    
+import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
+import frc.robot.Constants;
+
+public class AlgaeStop extends SequentialCommandGroup
+{
+    public AlgaeStop ()
+    {
+        addCommands(
+            Constants.ALGAE_REMOVER_SUBSYSTEM.stopRemoverCommand()
+            );
+        
+        addRequirements(Constants.ALGAE_REMOVER_SUBSYSTEM);
+    }
 }
