@@ -5,8 +5,8 @@ import frc.robot.Subsystems.*;
 public final class Constants {
     
     //motor IDs
-    public static final int ShooterID = 1;
-    public static final int AlgaeRemoverID = 2;
+    public static final int ShooterID = 11;
+    public static final int AlgaeRemoverID = 13;
 
     //operation IDs
     public static final int kControllerPort = 0;
