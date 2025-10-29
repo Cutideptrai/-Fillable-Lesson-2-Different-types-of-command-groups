@@ -3,17 +3,24 @@ package frc.robot.Commands;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.WaitCommand;
 import frc.robot.Constants;
-import java.lang.Math;
 
 public class AlgaeBackwards extends SequentialCommandGroup
 {
-    public AlgaeBackwards ()
+    /** Will run for 1s if no time given
+     * @param time the time in seconds the command runs
+    */
+    public AlgaeBackwards (double time)
     {
         addCommands(
             Constants.ALGAE_REMOVER_SUBSYSTEM.runRemoverBackwardsCommand(),
-            new WaitCommand(Math.random() * 5) // random time between 0s and 5s
+            new WaitCommand(time)
             );
         
         addRequirements(Constants.ALGAE_REMOVER_SUBSYSTEM);
+    }
+
+    public AlgaeBackwards ()
+    {
+        this(1);
     }
 }
