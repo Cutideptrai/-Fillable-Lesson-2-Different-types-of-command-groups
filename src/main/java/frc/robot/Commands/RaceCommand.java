@@ -14,7 +14,11 @@ public class RaceCommand extends ParallelRaceGroup
     public RaceCommand ()
     {
         addCommands(
-            new WaitCommand(0) // temp
+            new WaitCommand(0), // temp
+            new ShooterForwards(4),
+            new AlgaeForwards(2),
+            new ShooterStop(),
+            new AlgaeStop()
         );
 
         addRequirements();

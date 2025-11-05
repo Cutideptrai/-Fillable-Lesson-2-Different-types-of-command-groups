@@ -41,10 +41,10 @@ public class RobotContainer {
   private void configureBindings() 
   {
     // TO DO: CONFIGUE BINDINGS FOR COMMANDS
-    driverController.a().whileTrue(new RunMotor());
-    driverController.b().whileTrue(new RunMotor());
-    driverController.x().whileTrue(new RunMotor());
-    driverController.y().whileTrue(new RunMotor());
+    driverController.a().whileTrue(new SequentialCommand());
+    driverController.b().whileTrue(new SequentialCommand());
+    driverController.x().whileTrue(new ParallelCommand());
+    driverController.y().whileTrue(new RaceCommand());
 
   }
   
@@ -53,16 +53,8 @@ public class RobotContainer {
    *
    * @return the command to run in autonomous
    */
-  public Command SequentialCommand() {
-    ShooterForwards(5);
-    ShooterStop();
-    AlgaeForwards(5);
-    AlgaeStop();
-  }
+ 
 
-  public Command ParallelCommand() {
-    
-  }
     /* 
     public Command getAutonomousCommand() {
         // An example command will be run in autonomous

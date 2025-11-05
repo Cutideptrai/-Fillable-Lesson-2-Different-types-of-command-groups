@@ -13,7 +13,11 @@ public class ParallelCommand extends ParallelCommandGroup
     public ParallelCommand ()
     {
         addCommands(
-            new WaitCommand(0) // temp
+            new WaitCommand(0), // temp
+            new ShooterForwards(5),
+            new ShooterStop(),
+            new AlgaeForwards(5),
+            new AlgaeStop()
         );
 
         addRequirements();
