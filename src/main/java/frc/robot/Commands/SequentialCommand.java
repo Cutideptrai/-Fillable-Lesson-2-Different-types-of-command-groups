@@ -16,6 +16,6 @@ public class SequentialCommand extends SequentialCommandGroup
             new AlgaeStop()
         );
 
-        addRequirements();
+        addRequirements(getRequirements());
     }
 }

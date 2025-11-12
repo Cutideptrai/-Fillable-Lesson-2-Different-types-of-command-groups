@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 import edu.wpi.first.wpilibj2.command.WaitCommand;
 import frc.robot.Constants;
 
-public class ParallelCommand extends ParallelCommandGroup
+public class ParallelCommand extends SequentialCommand
 {
     /*
      * Run both the shooter and algae remover at the same time,
@@ -12,14 +12,18 @@ public class ParallelCommand extends ParallelCommandGroup
      */
     public ParallelCommand ()
     {
-        addCommands(
-            new WaitCommand(0), // temp
-            new ShooterForwards(5),
-            new ShooterStop(),
-            new AlgaeForwards(5),
-            new AlgaeStop()
+        addCommands( 
+            new ParallelCommandGroup(
+                new WaitCommand(0), // temp
+                new ShooterForwards(5),
+                new AlgaeForwards(5)
+            ),
+            new ParallelCommandGroup(
+                new ShooterStop(),
+                new AlgaeStop()
+            )
         );
 
-        addRequirements();
+        addRequirements(getRequirements());
     }
 }

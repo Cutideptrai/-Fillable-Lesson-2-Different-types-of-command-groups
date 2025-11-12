@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj2.command.ParallelRaceGroup;
 import edu.wpi.first.wpilibj2.command.WaitCommand;
 import frc.robot.Constants;
 
-public class RaceCommand extends ParallelRaceGroup
+public class RaceCommand extends SequentialCommand
 {
     /*
      * Run both the shooter and the remover
@@ -21,6 +21,6 @@ public class RaceCommand extends ParallelRaceGroup
             new AlgaeStop()
         );
 
-        addRequirements();
+        addRequirements(getRequirements());
     }
 }

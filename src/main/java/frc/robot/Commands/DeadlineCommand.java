@@ -15,9 +15,12 @@ public class DeadlineCommand extends SequentialCommandGroup
     public DeadlineCommand ()
     {
         addCommands(
-            new WaitCommand(0) // temp
+            new DeadlineCommand(
+
+            )
+            
         );
 
-        addRequirements();
+        addRequirements(getRequirements());
     }
 }
