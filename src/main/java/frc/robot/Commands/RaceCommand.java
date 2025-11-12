@@ -14,9 +14,11 @@ public class RaceCommand extends SequentialCommand
     public RaceCommand ()
     {
         addCommands(
-            new WaitCommand(0), // temp
-            new ShooterForwards(4),
-            new AlgaeForwards(2),
+            new ParallelRaceGroup(
+                new WaitCommand(0), // temp
+                new ShooterForwards(4),
+                new AlgaeForwards(2)
+            ),
             new ShooterStop(),
             new AlgaeStop()
         );

@@ -15,10 +15,12 @@ public class DeadlineCommand extends SequentialCommandGroup
     public DeadlineCommand ()
     {
         addCommands(
-            new DeadlineCommand(
-
-            )
-            
+            new ParallelDeadlineGroup(
+                new ShooterForwards(2),
+                new AlgaeForwards(5)
+            ),
+            new ShooterStop(),
+            new AlgaeStop()
         );
 
         addRequirements(getRequirements());
